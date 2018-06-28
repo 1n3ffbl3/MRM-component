@@ -63,8 +63,8 @@ ___
 ## Libraries
 
 * react
-* create-react-app
-* babel
+* react-dom
+* react-scripts
 
 [TOP](#index)
 
