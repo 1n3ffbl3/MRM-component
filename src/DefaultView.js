@@ -7,7 +7,15 @@ class DefaultView extends Component{
         this.state = {
             showSubView: false
         };
+        this.toggleShowSubView = this.toggleShowSubView.bind(this)
     }
+
+    toggleShowSubView(){
+        this.setState({
+            showSubView: !this.state.showSubView
+        })
+    }
+
     render(){
         const subView2 = (
             <SubView name= "Second SubView"
@@ -15,9 +23,9 @@ class DefaultView extends Component{
                      />
         );
         return(
-            <div>
+            <div className="border">
                 <div>Default View</div>
-                <button onClick={()=> this.setState({showSubView: !this.state.showSubView})}>Trigger SubView</button>
+                <button onClick={()=> this.toggleShowSubView()}>Trigger SubView</button>
                 {
                     this.state.showSubView ?   <SubView name="First SubView" 
                         content="First subview content" 
