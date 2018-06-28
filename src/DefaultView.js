@@ -1,19 +1,10 @@
 import React, {Component} from "react";
 import SubView from "./SubView";
+import BaseView from "./BaseView";
 
-class DefaultView extends Component{
+class DefaultView extends BaseView{
     constructor(){
         super();
-        this.state = {
-            showSubView: false
-        };
-        this.toggleShowSubView = this.toggleShowSubView.bind(this)
-    }
-
-    toggleShowSubView(){
-        this.setState({
-            showSubView: !this.state.showSubView
-        })
     }
 
     render(){
@@ -23,17 +14,15 @@ class DefaultView extends Component{
                      />
         );
         return(
-            <div className="border">
+            <div className="borderBox">
                 <div>Default View</div>
-                <button onClick={()=> this.toggleShowSubView()}>Trigger SubView</button>
+                <a href="#" onClick={()=> this.toggleShowSubView()}>Trigger SubView</a>
                 {
                     this.state.showSubView ?   <SubView name="First SubView" 
                         content="First subview content" 
                         nestedView={subView2}
                          /> : ""
-                }
-            
-               
+                }       
             </div>
         )
     }

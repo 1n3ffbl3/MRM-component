@@ -1,30 +1,21 @@
 import React, {Component} from "react";
+import BaseView from "./BaseView";
 
-
-class SubView extends React.Component{
+class SubView extends BaseView {
     constructor(){
         super();
-        this.state = {
-            showSubView: false
-        };
-        this.toggleShowSubView = this.toggleShowSubView.bind(this);
     }
 
-    toggleShowSubView(){
-        this.setState({
-            showSubView: !this.state.showSubView
-        })
-    }
     render(){
         const name = this.props.name;
         const content = this.props.content;
         return(
-            <div className="border">
+            <div className="borderBox">
                 <div>{name}</div>
                 <div>{content}</div>
                 {
                     this.props.nestedView ? 
-                        <button onClick={()=> this.toggleShowSubView()}>Trigger SubView</button> : ''
+                        <a href="#" onClick={()=> this.toggleShowSubView()}>Trigger SubView</a> : ''
                 }
                 {
                     this.state.showSubView ? this.props.nestedView : ''
