@@ -2,7 +2,7 @@
 
 ## Description
 
-Goal of this project was to build a reusable React component following the best practices and idioms.
+The goal of this project was to build a reusable React component following the best practices and idioms.
 
 ### Index
 
